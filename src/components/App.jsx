@@ -65,24 +65,6 @@ export class App extends Component {
       localStorage.setItem('contacts', JSON.stringify(updatedContactsList));
     }
   }
-  // componentDidMount() {
-  //   console.log('AppDidMount');
-  //   const contacts = localStorage.getItem('contacts');
-  //   console.log(contacts);
-  //   const parsedContacts = JSON.parse(contacts);
-  //   if (parsedContacts) {
-  //     this.setState({ contacts: [parsedContacts] });
-  //   }
-  // }
-  // componentDidUpdate(prevProps, prevState) {
-  //   // console.log('AppDidUpdated');
-  //   // // console.log(prevProps);
-  //   // console.log(this.state);
-  //   if (this.state.contacts !== prevState.contacts) {
-  //     console.log('updated');
-  //     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-  //   }
-  // }
 
   render() {
     return (
