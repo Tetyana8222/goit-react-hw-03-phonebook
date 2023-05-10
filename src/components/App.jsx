@@ -46,6 +46,43 @@ export class App extends Component {
   handleChangeFilter = event => {
     this.setState({ filter: event.currentTarget.value });
   };
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+
+    if (contacts) {
+      this.setState({ contacts: contacts });
+      return;
+    }
+
+    this.setState({ contacts: this.state.contacts });
+  }
+
+  componentDidUpdate(_, prevState) {
+    const updatedContactsList = this.state.contacts;
+    const prevContactsList = prevState.contacts;
+
+    if (updatedContactsList !== prevContactsList) {
+      localStorage.setItem('contacts', JSON.stringify(updatedContactsList));
+    }
+  }
+  // componentDidMount() {
+  //   console.log('AppDidMount');
+  //   const contacts = localStorage.getItem('contacts');
+  //   console.log(contacts);
+  //   const parsedContacts = JSON.parse(contacts);
+  //   if (parsedContacts) {
+  //     this.setState({ contacts: [parsedContacts] });
+  //   }
+  // }
+  // componentDidUpdate(prevProps, prevState) {
+  //   // console.log('AppDidUpdated');
+  //   // // console.log(prevProps);
+  //   // console.log(this.state);
+  //   if (this.state.contacts !== prevState.contacts) {
+  //     console.log('updated');
+  //     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  //   }
+  // }
 
   render() {
     return (
