@@ -20,7 +20,7 @@ export const Label = styled.label`
 `;
 
 export const TextFiled = styled.input`
-  max-width: 150px;
+  max-width: 145px;
   padding: 8px;
   border-radius: 5px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.23), 0px 1px 1px rgba(0, 0, 0, 0.24),
